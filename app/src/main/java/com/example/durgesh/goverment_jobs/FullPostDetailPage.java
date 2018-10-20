@@ -22,7 +22,6 @@ public class FullPostDetailPage extends AppCompatActivity {
 
         webView = (WebView) findViewById(R.id.webview1);
 
-        Toast.makeText(this, "sss", Toast.LENGTH_SHORT).show();
 
         Intent in = getIntent();
         pname = in.getStringExtra("PostName");

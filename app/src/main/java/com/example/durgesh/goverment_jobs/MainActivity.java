@@ -1,5 +1,6 @@
 package com.example.durgesh.goverment_jobs;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -104,6 +105,14 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_share) {
 
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent
+                    .putExtra(
+                            Intent.EXTRA_TEXT,
+                            "Download Now: https://play.google.com/store/apps/details?id=com.category.message_collection");
+            sendIntent.setType("text/plain");
+            startActivity(sendIntent);
 
         } else if (id == R.id.nav_send) {
             finish();

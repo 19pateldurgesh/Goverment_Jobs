@@ -22,7 +22,6 @@ public class FullPostDetailPage extends AppCompatActivity {
 
         webView = (WebView) findViewById(R.id.webview1);
 
-
         Intent in = getIntent();
         pname = in.getStringExtra("PostName");
         pdate = in.getStringExtra("PostDate");

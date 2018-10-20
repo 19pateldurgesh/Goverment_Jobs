@@ -13,18 +13,16 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class BookmarkListAdapter  extends RecyclerView.Adapter<BookmarkListAdapter.MyHolder> {
-    private Context activity;
-    ArrayList<JobDataType> booklist=new ArrayList<>();
+public class BookmarkListAdapter extends RecyclerView.Adapter<BookmarkListAdapter.MyHolder> {
 
-    Button share,more;
-//    Button bookmark;
-    CheckBox bookmark;
+    private Context activity;
+    ArrayList<JobDataType> booklist = new ArrayList<>();
+
+    Button share, more;
 
     public BookmarkListAdapter(FragmentActivity activity, ArrayList<JobDataType> bookmarklist) {
-        this.activity=activity;
-        booklist=bookmarklist;
-
+        this.activity = activity;
+        booklist = bookmarklist;
     }
 
     @Override
@@ -37,10 +35,9 @@ public class BookmarkListAdapter  extends RecyclerView.Adapter<BookmarkListAdapt
 
     @Override
     public void onBindViewHolder(MyHolder holder, int position) {
-
         holder.pn.setText(booklist.get(position).getPostname());
         holder.pd.setText(booklist.get(position).getPostdate());
-
+        holder.bookmark.setChecked(true);
     }
 
     @Override
@@ -50,27 +47,29 @@ public class BookmarkListAdapter  extends RecyclerView.Adapter<BookmarkListAdapt
 
     public class MyHolder extends RecyclerView.ViewHolder {
 
-        public TextView pn,pd;
+        public TextView pn, pd;
+        CheckBox bookmark;
+
 
         public MyHolder(final View itemView) {
             super(itemView);
-            pn= (TextView) itemView.findViewById(R.id.pname);
-            pd= (TextView) itemView.findViewById(R.id.pdate);
 
-//            bookmark= (Button) itemView.findViewById(R.id.book);
-            bookmark= (CheckBox) itemView.findViewById(R.id.book);
-            share= (Button) itemView.findViewById(R.id.share);
-            more= (Button) itemView.findViewById(R.id.more);
-            if (bookmark.isChecked()!=true){
-                bookmark.setChecked(true);
-            }
+            pn = (TextView) itemView.findViewById(R.id.pname);
+            pd = (TextView) itemView.findViewById(R.id.pdate);
 
+            bookmark = (CheckBox) itemView.findViewById(R.id.book);
+            share = (Button) itemView.findViewById(R.id.share);
+            more = (Button) itemView.findViewById(R.id.more);
+
+//            if (bookmark.isChecked() != true) {
+//                bookmark.setChecked(true);
+//            }
 
             bookmark.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    SharedPreference sharedPreference=new SharedPreference();
-                    sharedPreference.removeFavorite(activity,booklist.get(getAdapterPosition()));
+                    SharedPreference sharedPreference = new SharedPreference();
+                    sharedPreference.removeFavorite(activity, booklist.get(getAdapterPosition()));
 
                     booklist.remove(booklist.get(getAdapterPosition()));
                     notifyDataSetChanged();
@@ -78,18 +77,15 @@ public class BookmarkListAdapter  extends RecyclerView.Adapter<BookmarkListAdapt
             });
 
 
-
             more.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
-                    Intent in=new Intent(activity,FullPostDetailPage.class);
-//                in.putExtra("PostName",pname.get(getAdapterPosition()));
-//                in.putExtra("PostDate",pdate.get(getAdapterPosition()));
+                    Intent in = new Intent(activity, FullPostDetailPage.class);
 
-                    in.putExtra("PostName",booklist.get(getAdapterPosition()).getPostname());
-                    in.putExtra("PostDate",booklist.get(getAdapterPosition()).getPostdate());
-                    in.putExtra("PostLink",booklist.get(getAdapterPosition()).getPostlink());
+                    in.putExtra("PostName", booklist.get(getAdapterPosition()).getPostname());
+                    in.putExtra("PostDate", booklist.get(getAdapterPosition()).getPostdate());
+                    in.putExtra("PostLink", booklist.get(getAdapterPosition()).getPostlink());
 
                     activity.startActivity(in);
 
@@ -102,8 +98,7 @@ public class BookmarkListAdapter  extends RecyclerView.Adapter<BookmarkListAdapt
 
                     Intent sendIntent = new Intent();
                     sendIntent.setAction(Intent.ACTION_SEND);
-//                    sendIntent.putExtra(Intent.EXTRA_TEXT, pname.get(getAdapterPosition()) + " " + pdate.get(getAdapterPosition()));
-                    sendIntent.putExtra(Intent.EXTRA_TEXT, booklist.get(getAdapterPosition()).getPostname()+ " " + booklist.get(getAdapterPosition()).getPostdate());
+                    sendIntent.putExtra(Intent.EXTRA_TEXT, booklist.get(getAdapterPosition()).getPostname() + " " + booklist.get(getAdapterPosition()).getPostdate());
                     sendIntent.setType("text/plain");
 
                     activity.startActivity(Intent.createChooser(sendIntent, "Share post"));
@@ -115,7 +110,7 @@ public class BookmarkListAdapter  extends RecyclerView.Adapter<BookmarkListAdapt
     }
 
     public void loadData(ArrayList<JobDataType> ob) {
-        if(booklist !=null)
+        if (booklist != null)
             booklist.clear();
 
         booklist = ob;

@@ -35,7 +35,8 @@ public class PostlistPage extends AppCompatActivity {
     int array_size;
     int i = 0;
 
-    String URL_Job_List = "http://androidapi.w3blogs.com/goverment_jobs/Job_list.php";
+    String URL_Job_List = "http://androidapi.w3blogs.com/goverment_jobs/Job_list.php" +
+            "";
 
     ArrayList<String> post_name = new ArrayList<>();
     ArrayList<String> post_date = new ArrayList<>();

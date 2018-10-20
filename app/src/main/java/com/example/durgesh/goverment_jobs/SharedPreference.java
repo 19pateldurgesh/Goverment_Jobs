@@ -2,7 +2,7 @@ package com.example.durgesh.goverment_jobs;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.widget.Toast;
+
 
 import com.google.gson.Gson;
 
@@ -43,7 +43,6 @@ public class SharedPreference {
         for (JobDataType m : favorites) {
             if (m.getPostname().equals(product.getPostname())) {
                 f=1;
-                Toast.makeText(context, "The Item Is Already Exists", Toast.LENGTH_SHORT).show();
                 break;
             }
         }

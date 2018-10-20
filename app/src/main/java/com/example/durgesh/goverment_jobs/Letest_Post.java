@@ -66,13 +66,18 @@ public class Letest_Post extends Fragment {
                     JSONObject object = new JSONObject(response);
                     JSONArray jsonArray = object.getJSONArray("Job");
                     for (int i = 0; i < jsonArray.length(); i++) {
+
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
+
                         JobDataType ob = new JobDataType();
+
                         ob.setPostname(jsonObject.getString("title"));
                         ob.setPostdate(jsonObject.getString("publish_date"));
                         ob.setPostlink(jsonObject.getString("link"));
+
                         datalist.add(ob);
                     }
+
                     RecyclerView.LayoutManager lml = new LinearLayoutManager(getActivity());
                     rv.setLayoutManager(lml);
 
@@ -96,13 +101,13 @@ public class Letest_Post extends Fragment {
 
     }
 
-    @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        super.setUserVisibleHint(isVisibleToUser);
-        if (isVisibleToUser && isResumed()) {
-
-            this.onActivityCreated(null);
-
-        }
-    }
+//    @Override
+//    public void setUserVisibleHint(boolean isVisibleToUser) {
+//        super.setUserVisibleHint(isVisibleToUser);
+//        if (isVisibleToUser && isResumed()) {
+//
+//            this.onActivityCreated(null);
+//
+//        }
+//    }
 }

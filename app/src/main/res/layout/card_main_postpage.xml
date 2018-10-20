@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="5dp"
+    app:cardBackgroundColor="@color/colorPrimary"
+    android:layout_marginBottom="10dp"
+    android:id="@+id/cardviewpostpage">
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="vertical"-->
+        <!--&gt;-->
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/pname"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="abcdefg"-->
+        <!--android:layout_marginBottom="10dp"-->
+        <!--android:paddingLeft="10dp"-->
+        <!--android:paddingRight="10dp"-->
+        <!--/>-->
+
+        <!--<TextView-->
+            <!--android:layout_below="@+id/pname"-->
+            <!--android:id="@+id/pdate"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="abcdefg"-->
+            <!--android:layout_marginBottom="10dp"-->
+            <!--android:paddingLeft="10dp"-->
+            <!--android:paddingRight="10dp"-->
+            <!--/>-->
+
+    <!--</RelativeLayout>-->
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@color/cardview_shadow_start_color"-->
+        <!--&gt;-->
+        <!--<ImageButton-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/share_icon"-->
+            <!--android:background="@color/btncolorback"-->
+            <!--android:id="@+id/btnshare"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:paddingLeft="30dp"-->
+            <!--/>-->
+
+        <!--<ImageButton-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/bookmark_icon"-->
+            <!--android:background="@color/btncolorback"-->
+            <!--android:id="@+id/btnbookmark"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Read More...."-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:paddingRight="10dp"-->
+            <!--/>-->
+
+    <!--</RelativeLayout>-->
+
+    <!--</LinearLayout>-->
+
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view_inner"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="30dp"
+
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="0dp"
+
+        >
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+
+    >
+
+        <TextView
+        android:id="@+id/pname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="Job Name:"
+            />
+        <TextView
+        android:layout_below="@+id/pname"
+        android:id="@+id/pdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="15dp"
+            android:text="Last Date:"/>
+        <!--<TextView-->
+            <!--android:layout_below="@+id/pdate"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:textSize="20dp"-->
+            <!--android:text="Age:"/>-->
+</RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/cardview_shadow_start_color">
+
+    <Button
+        android:layout_marginTop="150dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:id="@+id/more"
+        android:background="#00000000"
+        android:text="more..."/>
+
+    <Button
+        android:layout_marginTop="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/share"
+        android:background="#00000000"
+        android:text="Share"/>
+
+    <!--<Button-->
+        <!--android:layout_marginTop="150dp"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="#00000000"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:id="@+id/book"-->
+        <!--android:text="Bookmark"/>-->
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="155dp"
+            android:background="#00000000"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/book"
+            android:button="@drawable/book"
+            />
+
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
+
+
+    <!--</android.support.v7.widget.CardView>-->
